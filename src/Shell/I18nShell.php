@@ -17,8 +17,6 @@ namespace Cake\Shell;
 
 use Cake\Console\ConsoleOptionParser;
 use Cake\Console\Shell;
-use Cake\Core\App;
-use Cake\Core\Plugin;
 use Cake\Utility\Inflector;
 use DirectoryIterator;
 
