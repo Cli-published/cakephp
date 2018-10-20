@@ -112,13 +112,14 @@ class AssetsTask extends Shell
             }
 
             $link = Inflector::underscore($plugin);
-            $dir = Configure::read('App.wwwRoot');
+            $wwwRoot = Configure::read('App.wwwRoot');
+            $dir = $wwwRoot;
             $namespaced = false;
             if (strpos($link, '/') !== false) {
                 $namespaced = true;
                 $parts = explode('/', $link);
                 $link = array_pop($parts);
-                $dir = Configure::read('App.wwwRoot') . implode(DIRECTORY_SEPARATOR, $parts) . DIRECTORY_SEPARATOR;
+                $dir = $wwwRoot . implode(DIRECTORY_SEPARATOR, $parts) . DIRECTORY_SEPARATOR;
             }
 
             $plugins[$plugin] = [
